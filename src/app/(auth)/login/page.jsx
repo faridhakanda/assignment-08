@@ -1,6 +1,6 @@
 'use client'
 import React, { useState } from 'react';
-
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 const LoginPage = () => {
     const [isShow, setIsShow] = useState(false);
     return (
@@ -17,7 +17,8 @@ const LoginPage = () => {
                     type={isShow ? "text": "password"}
                     placeholder='Enter your password'
                 />
-
+                <span className='cursor-pointer' onClick={() => setIsShow(!isShow)}>{isShow ? <FaEye /> : <FaEyeSlash />}</span>
+                
             </div>
         </div>
     );
