@@ -17,17 +17,8 @@ const Navbar = () => {
             {/* Desktop Navbar */}
             <div className='hidden md:flex md:visible space-x-4 mx-auto items-center justify-center'>
                 <NavLink href="/">Home</NavLink>
-                {/* <NavLink href="/login">Login</NavLink>
-                <NavLink href="/register">Register</NavLink> */}
                 <NavLink href="/details/1">Details</NavLink>
-                {/* {isPending ? <h2>Loading...</h2> : user ? 
-                    <div>
-                        <NavLink href="/my-profile">MyProfile</NavLink> : <NavLink href="/login">Logout</NavLink>
-                    </div> :
-                    <div>
-                        <NavLink href="/login">Login</NavLink>
-                    </div>
-                } */}
+                
                 {isPending ? <h2>Loading...</h2> : user ? 
                     <div className='flex items-center space-x-2'>
                         <NavLink href="/userProfile">{user.name}</NavLink> 
@@ -36,14 +27,16 @@ const Navbar = () => {
                         </button>
                         
                     </div> :
-                    <div>
+                    <div className='flex space-x-2'>
                         <NavLink href="/login">Login</NavLink>
                         <NavLink href="/register">Register</NavLink>
                     </div>
                 }
             </div>
+
+            {/* Mobile Navbar */}
             <div className='visible md:hidden'>
-                <div className='bg-slate-50 flex justify-between items-center p-2 m-1 shadow-sm'>
+                <div className='flex justify-between items-center  '>
                     <h2>Mobile Navbar</h2>
                     <div
                         onClick={() => setIsShow(!isShow)}
@@ -57,12 +50,7 @@ const Navbar = () => {
                         <div onClick={() => setIsShow(true)}>
                             <NavLink  className="py-1"  href="/">Home</NavLink>
                         </div>
-                        {/* <div onClick={() => setIsShow(true)}>
-                            <NavLink  className="py-1" href="/login">Login</NavLink>
-                        </div> */}
-                        {/* <div onClick={() => setIsShow(true)}>
-                            <NavLink  className="py-1" href="/register">Register</NavLink>
-                        </div> */}
+                        
                         <div onClick={() => setIsShow(true)}>
                             <NavLink  className="py-1" href="/details/1">Details</NavLink>
                         </div>

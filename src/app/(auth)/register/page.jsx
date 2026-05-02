@@ -54,8 +54,8 @@ const Register = () => {
 };
   const [isShowPassword, setIsShowPassword] = useState(false);
   return (
-    <div className="container mx-auto min-h-[80vh] bg-slate-100 flex justify-center items-center">
-      <div className="p-4 my-4 rounded-xl bg-white">
+    <div className="container mx-auto my-3 min-h-[80vh] bg-slate-100 flex justify-center items-center">
+      <div className="p-4 mx-2 my-4 rounded-xl bg-white">
         <h2 className="font-bold text-3xl text-center mb-6">
           Create your account
         </h2>
