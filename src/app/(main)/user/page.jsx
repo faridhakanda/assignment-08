@@ -7,7 +7,7 @@ const UserProfile = () => {
     const user = session?.user;
     //console.log(user, "user details page!");
     if (isPending) {
-        return <p>Loading...</p>
+        return <span className="loading loading-ring loading-xl"></span>
     }
     if (!session?.user) {
         return <p>Please log in to view this page.</p>

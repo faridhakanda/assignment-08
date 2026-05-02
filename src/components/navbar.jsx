@@ -22,7 +22,7 @@ const Navbar = () => {
         
         <div>
           {isPending ? (
-            <h2>Loading...</h2>
+            <span className="loading loading-ring loading-xl"></span>
           ) : user ? (
             
             <div className="flex items-center space-x-2">
@@ -77,13 +77,9 @@ const Navbar = () => {
         <div className="">
           {!isShow && (
             <div className="w-64 opacity-100 px-4 py-4 justify-start">
-              {/* <div onClick={() => setIsShow(true)}>
-                <NavLink className="py-1" href="/">
-                  QurbaniAnimals
-                </NavLink>
-              </div> */}
+              
               {isPending ? (
-                <h2>Loading...</h2>
+                <span className="loading loading-ring loading-xl"></span>
               ) : user ? (
                 <div className="space-y-3 my-3">
                     <div
