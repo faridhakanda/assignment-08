@@ -3,18 +3,44 @@ import React, { useState } from 'react';
 import NavLink from './navlink';
 import { IoIosMenu } from "react-icons/io";
 import { RxCross1 } from 'react-icons/rx';
+import { authClient } from '@/lib/auth-client';
+import Link from 'next/link';
 const Navbar = () => {
-    const mobile = false;
+    
     const [isShow, setIsShow] = useState(true);
+    const { data: session, isPending} = authClient.useSession();
+    console.log(session, "session");
+    const user = session?.user;
+    console.log(user, "Farid at qurabanihat!");
     return (
         <div>
-            
-            <div className='hidden md:flex md:visible space-x-4 mx-auto justify-center'>
+            {/* Desktop Navbar */}
+            <div className='hidden md:flex md:visible space-x-4 mx-auto items-center justify-center'>
                 <NavLink href="/">Home</NavLink>
-                <NavLink href="/login">Login</NavLink>
-                <NavLink href="/register">Register</NavLink>
-                <NavLink href="/notfound">NotFound</NavLink>
-                {mobile ? <NavLink href="/myprofile">MyProfile</NavLink> : <NavLink href="/logout">Logout</NavLink>}
+                {/* <NavLink href="/login">Login</NavLink>
+                <NavLink href="/register">Register</NavLink> */}
+                <NavLink href="/details/1">Details</NavLink>
+                {/* {isPending ? <h2>Loading...</h2> : user ? 
+                    <div>
+                        <NavLink href="/my-profile">MyProfile</NavLink> : <NavLink href="/login">Logout</NavLink>
+                    </div> :
+                    <div>
+                        <NavLink href="/login">Login</NavLink>
+                    </div>
+                } */}
+                {isPending ? <h2>Loading...</h2> : user ? 
+                    <div className='flex items-center space-x-2'>
+                        <NavLink href="/userProfile">{user.name}</NavLink> 
+                        <button onClick={async() => await authClient.signOut()} className='btn btn-primary'>
+                            <Link href="/login">Logout</Link>
+                        </button>
+                        
+                    </div> :
+                    <div>
+                        <NavLink href="/login">Login</NavLink>
+                        <NavLink href="/register">Register</NavLink>
+                    </div>
+                }
             </div>
             <div className='visible md:hidden'>
                 <div className='bg-slate-50 flex justify-between items-center p-2 m-1 shadow-sm'>
@@ -31,19 +57,29 @@ const Navbar = () => {
                         <div onClick={() => setIsShow(true)}>
                             <NavLink  className="py-1"  href="/">Home</NavLink>
                         </div>
-                        <div onClick={() => setIsShow(true)}>
+                        {/* <div onClick={() => setIsShow(true)}>
                             <NavLink  className="py-1" href="/login">Login</NavLink>
-                        </div>
-                        <div onClick={() => setIsShow(true)}>
+                        </div> */}
+                        {/* <div onClick={() => setIsShow(true)}>
                             <NavLink  className="py-1" href="/register">Register</NavLink>
-                        </div>
+                        </div> */}
                         <div onClick={() => setIsShow(true)}>
-                            <NavLink  className="py-1" href="/notfound">NotFound</NavLink>
+                            <NavLink  className="py-1" href="/details/1">Details</NavLink>
                         </div>
                        
-                        <div onClick={() => setIsShow(true)}>
-                            {mobile ? <NavLink  href="/myprofile">MyProfile</NavLink> : <NavLink href="/logout">Logout</NavLink>}
-                        </div>
+                        {isPending ? <h2>Loading...</h2> : user ? 
+                            <div>
+                                <NavLink href="/userProfile">{user.name}</NavLink> 
+                                <button onClick={async() => await authClient.signOut()} className='btn btn-primary'>
+                                    <Link href="/login">Logout</Link>
+                                </button>
+                                
+                            </div> :
+                            <div>
+                                <NavLink href="/login">Login</NavLink>
+                                <NavLink href="/register">Register</NavLink>
+                            </div>
+                        }
                         
                        
                     </div>

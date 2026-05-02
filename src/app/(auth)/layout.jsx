@@ -1,14 +1,16 @@
 import Header from '@/components/header';
 import React from 'react';
+import { ToastContainer } from 'react-toastify';
 
-const MainLayout = ({ children }) => {
+const Layout = ({children}) => {
     return (
         <div>
             <Header />
-            
             {children}
+            <ToastContainer />
+            
         </div>
     );
 };
 
-export default MainLayout;
+export default Layout;

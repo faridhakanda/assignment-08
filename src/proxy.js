@@ -1,3 +1,7 @@
+import dns from "node:dns";
+dns.setServers(["8.8.8.8", "8.8.4.4"]);
+
+
 import { NextResponse } from "next/server";
 
 export function proxy(request) {
@@ -5,5 +9,5 @@ export function proxy(request) {
 }
 
 export const config = {
-    matcher: ['/details-page', '/my-profile']
+    matcher: ['/details/:path*', '/my-profile']
 }
