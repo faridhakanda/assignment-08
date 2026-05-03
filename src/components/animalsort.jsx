@@ -11,16 +11,13 @@ const AnimalSort = ({ allAnimals }) => {
     const [isSort, setIsSort] = useState(true);
     return (
         <div>
-            <h2 className="font-bold text-xl md:text-3xl my-2 text-center">All Animals in the Upcoming Qurbani Hat.</h2>
-            
-            <div className='mx-auto flex'>
-                <button onClick={() => setIsSort(!isSort)} className='btn btn-primary mx-auto'>Sort by Price</button>
-            </div>
-            
 
-
-            <div className=" -mt-48 py-2 md:mt-0 lg:mt-0 mx-auto justify-center items-center">
-            
+            <div className="-mt-48 py-2 md:mt-0 lg:mt-0 mx-auto justify-center items-center">
+                <h2 className="font-bold text-lg md:text-3xl my-2 text-center">All Animals in the Upcoming Qurbani Hat.</h2>
+                
+                <div className='mx-auto flex'>
+                    <button onClick={() => setIsSort(!isSort)} className='btn btn-primary mx-auto'>Sort by Price</button>
+                </div>
             
             {/* Card for animals   */}
                 {isSort ? 
