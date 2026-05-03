@@ -28,11 +28,17 @@ const DetailsPage = async ({params}) => {
                     {/* <Image src="/" alt="image" width={20} height={400} /> */}
                 </figure>
                 <div className="card-body">
-                    <h2 className="card-title">{animal.name}</h2>
-                    <Image className='mx-auto justify-center' src={animal.image} alt={animal.name} width={400} height={200} />
                     
-                    <p>{animal.price}</p>
-                    <p>{animal.description}</p>
+                    <Image className='mx-auto justify-center' src={animal.image} alt={animal.name} width={400} height={200} />
+                    <h2 className="card-title font-bold text-xl md:text-2xl">{animal.name}</h2>
+                    <p className='text-[#647489]'>Category: <span className='font-bold text-yellow-400'>{animal.category}</span></p>
+                    <p className='text-[#647489]'>Type of Animal: {animal.type}</p>
+                    <p className='text-[#647489]'>Breed: {animal.breed}</p>
+                    <p className='text-[#647489]'>Price: {animal.price}</p>
+                    <p className='text-[#647489]'>Weight: {animal.weight}</p>
+                    <p className='text-[#647489]'>Age: {animal.age}</p>
+                    <p className='font-medium text-lg'>Location: {animal.location}</p>
+                    <p className='text-[#647489]'>{animal.description}</p>
                     <div className="card-actions justify-between my-2">
                         
                         <button className='btn btn-info'>
