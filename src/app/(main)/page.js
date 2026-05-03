@@ -21,10 +21,10 @@ export default async function Home() {
             
             
             
-            {/* Card for animals px-4 py-4 this value was in card  */}
+            {/* Card for animals   */}
             <div className=" px-2 py-2 mx-auto justify-center space-x-2 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
                 {animals.map(animal => 
-                    <div key={animal.id} className="card w-full md:w-84 lg:w-90 bg-slate-50 border-1 border-purple-200 shadow-sm   mx-auto my-2 space-y-4">
+                    <div key={animal.id} className="card w-full md:w-84 lg:w-90 bg-slate-50 border-1 border-purple-200 shadow-sm px-1 py-1  mx-auto my-2 space-y-4">
                         <figure className="">
                             <Image src={animal.image} alt="image" width={400} height={200} />
                         </figure>
