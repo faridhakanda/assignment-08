@@ -2,7 +2,7 @@ import { getAnimalDetails } from '@/lib/data';
 import Link from 'next/link';
 import React from 'react';
 import Image from 'next/image';
-
+import { toast } from 'react-toastify';
 export const generateMetadata = async({ params }) => {
     const { id } = await params;
     const animalDetails = await getAnimalDetails(id);
@@ -17,6 +17,7 @@ const DetailsPage = async ({params}) => {
 
     const animal = await getAnimalDetails(id);
     console.log(animal, "details for animal");
+   
     return (
         <div className='px-2 my-3'>
            
@@ -41,8 +42,11 @@ const DetailsPage = async ({params}) => {
                     <p className='text-[#647489]'>{animal.description}</p>
                     <div className="card-actions justify-between my-2">
                         
-                        <button className='btn btn-info'>
-                            <Link href='/booking'>Booking Now</Link>
+                        <button 
+                            className='btn btn-info'
+                            
+                        >
+                            <Link href="/booking">Booking Now</Link>
                         </button>
                         <button className="btn btn-primary">
                             <Link href="/">DashBoard</Link>

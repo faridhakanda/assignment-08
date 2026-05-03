@@ -1,5 +1,7 @@
+import Footer from '@/components/footer';
 import Header from '@/components/header';
 import React from 'react';
+import { ToastContainer } from 'react-toastify';
 
 const MainLayout = ({ children }) => {
     return (
@@ -7,6 +9,8 @@ const MainLayout = ({ children }) => {
             <Header />
             
             {children}
+            <Footer />
+            <ToastContainer />
         </div>
     );
 };

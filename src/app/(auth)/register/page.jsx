@@ -59,7 +59,7 @@ const Register = () => {
         <h2 className="font-bold text-3xl text-center mb-6">
           Create your account
         </h2>
-
+        
         <form className="space-y-4" onSubmit={handleSubmit(handleRegisterFunction)}>
           <fieldset className="fieldset">
             <legend className="fieldset-legend">Name</legend>
