@@ -21,10 +21,10 @@ export default async function Home() {
             
             
             
-            {/* Card for animals */}
+            {/* Card for animals px-4 py-4 this value was in card  */}
             <div className=" px-2 py-2 mx-auto justify-center space-x-2 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
                 {animals.map(animal => 
-                    <div key={animal.id} className="card w-full md:w-84 lg:w-90 bg-slate-50 border-1 border-purple-200 shadow-sm px-4 py-4  mx-auto my-2 space-y-4">
+                    <div key={animal.id} className="card w-full md:w-84 lg:w-90 bg-slate-50 border-1 border-purple-200 shadow-sm   mx-auto my-2 space-y-4">
                         <figure className="">
                             <Image src={animal.image} alt="image" width={400} height={200} />
                         </figure>
@@ -45,16 +45,7 @@ export default async function Home() {
             </div>
         </div>
         
-        {/* <div className="container bg-pink-500 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 px-2">
-            <div className="card w-full md:w-84 lg:w-96 bg-purple-500 px-4 py-4 m-1 mx-auto gap-2">Hello, 1</div>
-            <div className="card w-full md:w-84 lg:w-96 bg-purple-500 px-4 py-4 m-1 mx-auto gap-2">Hello, 1</div>
-            <div className="card w-full md:w-84 lg:w-96 bg-purple-500 px-4 py-4 m-1 mx-auto gap-2">Hello, 1</div>
-            <div className="card w-full md:w-84 lg:w-96 bg-purple-500 px-4 py-4 m-1 mx-auto gap-2">Hello, 1</div>
-            <div className="card w-full md:w-84 lg:w-96 bg-purple-500 px-4 py-4 m-1 mx-auto gap-2">Hello, 1</div>
-            
-        </div> */}
         
-        {/* className="space-x-4 card bg-base-200 w-full sm:w-full sm:m-2 md:w-84 lg:w-96 justify-between shadow-sm mx-auto my-2 px-2 py-2 " */}
         
     </div>
   );
