@@ -4,12 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Avatar from '../../assets/user.png'
 import BannerPage from "./banner/page";
-import SortButton from "@/components/ui/sortButton";
-// const getAnimals = async () => {
-//     const res = await fetch('https://assignment-08-dataset.onrender.com/animals');
-//     const data = await res.json();
-//     return data;
-// }
+
 export default async function Home() {
     
     const allAnimals = await getAnimals();
