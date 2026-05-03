@@ -24,7 +24,7 @@ const DetailsPage = async ({params}) => {
             
 
 
-            <div className="card bg-base-100 w-fit mx-auto shadow-sm">
+            <div className="card bg-base-100 w-fit mx-auto shadow-sm border-1 border-purple-200">
                 <figure>
                     {/* <Image src="/" alt="image" width={20} height={400} /> */}
                 </figure>
