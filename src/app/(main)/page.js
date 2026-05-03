@@ -1,8 +1,10 @@
+
 import { getAnimals } from "@/lib/data";
 import Image from "next/image";
 import Link from "next/link";
 import Avatar from '../../assets/user.png'
 import BannerPage from "./banner/page";
+import SortButton from "@/components/ui/sortButton";
 // const getAnimals = async () => {
 //     const res = await fetch('https://assignment-08-dataset.onrender.com/animals');
 //     const data = await res.json();
@@ -10,16 +12,19 @@ import BannerPage from "./banner/page";
 // }
 export default async function Home() {
     
-
-    const animals = await getAnimals();
-    console.log('animals data: ', animals);
+    const allAnimals = await getAnimals();
+    
+    const animals = [...allAnimals].sort(
+            (a, b) => a.price - b.price,
+    );
+   
   return (
     <div className="container mx-auto justify-center items-center">
         <BannerPage />
         <div className=" -mt-48 py-2 md:mt-0 lg:mt-0 mx-auto justify-center items-center">
             <h2 className="font-bold text-xl md:text-3xl my-2 text-center">All Animals in the Upcoming Qurbani Hat.</h2>
             
-            
+            <button  className="btn btn-secondary mx-auto my-4 flex">Sort by Price</button>
             
             {/* Card for animals   */}
             <div className=" px-2 py-2 mx-auto justify-center space-x-2 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
@@ -31,6 +36,7 @@ export default async function Home() {
                         <div className="card-body">
                             <h2 className="card-title text-xl">{animal.name}</h2>
                             <p>Category: {animal.category}</p>
+                            <p>Type: {animal.type}</p>
                             <p>Price: {animal.price}</p>
                             <p className="text-[#647489] text-[14px]">{animal.description}</p>
                             <div className="card-actions justify-end">

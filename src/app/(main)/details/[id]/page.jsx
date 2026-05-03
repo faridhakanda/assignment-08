@@ -14,9 +14,12 @@ export const generateMetadata = async({ params }) => {
 
 const DetailsPage = async ({params}) => {
     const { id } = await params;
-
+    
     const animal = await getAnimalDetails(id);
     console.log(animal, "details for animal");
+    
+    
+    
    
     return (
         <div className='px-2 my-3'>
