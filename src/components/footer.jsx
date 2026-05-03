@@ -12,7 +12,7 @@ const Footer = () => {
                 <div className='mx-auto px-4 py-2 w-full text-center'>
                     <h2 className="font-bold text-[#FFFFFF] text-lg text-center md:text-start" >
                         <span className="text-2xl text-orange-400">Q</span>urabani
-                        <span className="text-2xl text-pink-400">A</span>nimals
+                        <span className="text-2xl text-pink-400">H</span>at
                     </h2>
                     <p className='text-[#647489] py-2 text-justify text-[14px]'>Qurbani Hat is one of the leading animals hat upcoming eid-ul-azha. We are providing home delivery services for our valuable customer who are not want to facing over crowding in animal hat.</p>
                 </div>
