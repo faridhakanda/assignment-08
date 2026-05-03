@@ -9,7 +9,7 @@ const UserProfile = () => {
     const user = session?.user;
     //console.log(user, "user details page!");
     if (isPending) {
-        return <span className="flex mx-auto my-auto py-4 justify-center items-center loading loading-ring loading-xl"></span>
+        return <span className="flex mx-auto my-4 justify-center items-center loading loading-ring loading-xl"></span>
     }
     if (!session?.user) {
         return <p>Please log in to view this page.</p>
