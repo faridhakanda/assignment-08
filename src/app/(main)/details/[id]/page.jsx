@@ -29,7 +29,7 @@ const DetailsPage = async ({params}) => {
                 </figure>
                 <div className="card-body">
                     <h2 className="card-title">{animal.name}</h2>
-                    <Image src={animal.image} alt={animal.name} width={200} height={200} />
+                    <Image src={animal.image} alt={animal.name} width={400} height={200} />
                     
                     <p>{animal.price}</p>
                     <p>{animal.description}</p>
