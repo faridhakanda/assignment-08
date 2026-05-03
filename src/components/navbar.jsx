@@ -11,6 +11,13 @@ const Navbar = () => {
   //console.log(session, "session");
   const user = session?.user;
   //console.log(user, "Farid at qurabanihat!");
+  
+  const handleGoogleSignIn = async () => {
+    const data = await authClient.signIn.social({
+        provider: "google",
+    });
+    console.log(data, 'google sign in data!');
+  }
   return (
     <div>
       {/* Desktop Navbar */}
@@ -40,23 +47,28 @@ const Navbar = () => {
                 </button>
             </div>
           ) : (
-            <div className="flex space-x-2">
+            <div className="flex space-x-2 items-center">
                 <NavLink className="font-bold text-lg" href="/">
                     <span className="text-2xl text-orange-400">Q</span>urabani
                     <span className="text-2xl text-pink-400">A</span>nimals
                 </NavLink>
                 <NavLink
-                    className="border-1 w-fit px-2 rounded-md border-gray-200 font-bold text-green-600 text-lg"
+                    className=" w-fit px-2  font-bold text-green-600 text-lg"
                     href="/login"
                 >
                     Login
                 </NavLink>
                 <NavLink
-                    className="border-1 w-fit px-2 rounded-md border-gray-200 font-bold text-blue-600 text-lg"
+                    className=" w-fit px-2   font-bold text-blue-600 text-lg"
                     href="/register"
                 >
                     Register
                 </NavLink>
+                
+                <button onClick={handleGoogleSignIn} className="btn bg-white text-black border-[#e5e5e5]">
+                    <svg aria-label="Google logo" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><g><path d="m0 0H512V512H0" fill="#fff"></path><path fill="#34a853" d="M153 292c30 82 118 95 171 60h62v48A192 192 0 0190 341"></path><path fill="#4285f4" d="m386 400a140 175 0 0053-179H260v74h102q-7 37-38 57"></path><path fill="#fbbc02" d="m90 341a208 200 0 010-171l63 49q-12 37 0 73"></path><path fill="#ea4335" d="m153 219c22-69 116-109 179-50l55-54c-78-75-230-72-297 55"></path></g></svg>
+                    Login with Google
+                </button>
             </div>
           )}
         </div>
@@ -74,14 +86,14 @@ const Navbar = () => {
             {isShow ? <IoIosMenu /> : <RxCross1 />}
           </div>
         </div>
-        <div className="">
+        <div className="items-center">
           {!isShow && (
             <div className="w-64 opacity-100 px-4 py-4 justify-start">
               
               {isPending ? (
                 <span className="loading loading-ring loading-xl"></span>
               ) : user ? (
-                <div className="space-y-3 my-3">
+                <div className="space-y-3 my-3 items-center">
                     <div
                         onClick={() => setIsShow(true)}
                     >
@@ -105,7 +117,7 @@ const Navbar = () => {
                     </button>
                 </div>
               ) : (
-                <div className="space-y-3 my-2">
+                <div className="space-y-3 my-2 items-center">
                     <div
                         onClick={() => setIsShow(true)}
                     >
@@ -126,6 +138,13 @@ const Navbar = () => {
                     >
                         <NavLink href="/register">Register</NavLink>
                     </div>
+                    <div onClick={() => setIsShow(true)}>
+                        <button onClick={handleGoogleSignIn} className="btn bg-white text-black border-[#e5e5e5]">
+                            <svg aria-label="Google logo" width="16" height="16" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><g><path d="m0 0H512V512H0" fill="#fff"></path><path fill="#34a853" d="M153 292c30 82 118 95 171 60h62v48A192 192 0 0190 341"></path><path fill="#4285f4" d="m386 400a140 175 0 0053-179H260v74h102q-7 37-38 57"></path><path fill="#fbbc02" d="m90 341a208 200 0 010-171l63 49q-12 37 0 73"></path><path fill="#ea4335" d="m153 219c22-69 116-109 179-50l55-54c-78-75-230-72-297 55"></path></g></svg>
+                            Login with Google
+                        </button>
+                    </div>
+
                 </div>
               )}
             </div>
