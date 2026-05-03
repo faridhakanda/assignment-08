@@ -3,6 +3,7 @@ import { authClient } from '@/lib/auth-client';
 import React from 'react';
 import Image from 'next/image';
 import Avatar from '../../../assets/user.png'
+import Link from 'next/link';
 const UserProfile = () => {
     const { data: session, isPending } = authClient.useSession();
     const user = session?.user;
@@ -27,30 +28,7 @@ const UserProfile = () => {
                     <Image className='mx-auto' src={Avatar} alt={user.name} width={48} height={48} />
                     <h2 className='text-xl md:text-3xl text-center'>{user.name}</h2>
                     <p className='text-center text-[#647489]'>{user.email}</p>
-                    {/* <Image className='mx-auto justify-center' src={animal.image} alt={animal.name} width={400} height={200} /> */}
-                    {/* <h2 className="card-title font-bold text-xl md:text-2xl">{animal.name}</h2>
-                    <p className='text-[#647489]'>Category: <span className='font-bold text-yellow-400'>{animal.category}</span></p>
-                    <p className='text-[#647489]'>Type of Animal: {animal.type}</p>
-                    <p className='text-[#647489]'>Breed: {animal.breed}</p>
-                    <p className='text-[#647489]'>Price: {animal.price}</p>
-                    <p className='text-[#647489]'>Weight: {animal.weight}</p>
-                    <p className='text-[#647489]'>Age: {animal.age}</p>
-                    <p className='font-medium text-lg'>Location: {animal.location}</p>
-                    <p className='text-[#647489]'>{animal.description}</p> */}
-                    {/* <div className="card-actions justify-between my-2">
-                        
-                        <button 
-                            className='btn btn-info'
-                            
-                        >
-                            <Link href="/booking">Booking Now</Link>
-                        </button>
-                        <button className="btn btn-primary">
-                            <Link href="/">DashBoard</Link>
-                        </button>
-                        
-                    
-                    </div> */}
+                   <Link className='btn btn-primary mx-auto' href="/">Go to DashBoard</Link>
                 </div>
             </div>  
         </div>
