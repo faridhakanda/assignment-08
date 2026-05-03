@@ -5,12 +5,14 @@ import { IoIosMenu } from "react-icons/io";
 import { RxCross1 } from "react-icons/rx";
 import { authClient } from "@/lib/auth-client";
 import Link from "next/link";
+import Avatar from '../assets/user.png'
+import Image from "next/image";
 const Navbar = () => {
   const [isShow, setIsShow] = useState(true);
   const { data: session, isPending } = authClient.useSession();
-  //console.log(session, "session");
+  console.log(session, "session");
   const user = session?.user;
-  //console.log(user, "Farid at qurabanihat!");
+  console.log(user, "Farid at qurabanihat!");
   
   const handleGoogleSignIn = async () => {
     const data = await authClient.signIn.social({
@@ -38,7 +40,12 @@ const Navbar = () => {
                     <span className="text-2xl text-orange-400">Q</span>urabani
                     <span className="text-2xl text-pink-400">A</span>nimals
                 </NavLink>
-                <NavLink className="font-bold text-yellow-400 text-[18px] btn" href="/user">{user.name}</NavLink>
+                <div className="btn">
+                    <Image src={user.photo || Avatar} alt={user.name} width={32} height={32} />
+                    <NavLink className="font-bold text-yellow-400 text-[18px]" href="/user">{user.name}</NavLink>
+                
+                </div>
+                
                 <button
                     onClick={async () => await authClient.signOut()}
                     className="btn btn-primary"
@@ -106,7 +113,9 @@ const Navbar = () => {
                     <div
                         className="btn"
                         onClick={() => setIsShow(true)}>
+                        <Image src={user.photo || Avatar} alt={user.name} width={32} height={32} />
                         <NavLink className="font-bold text-yellow-400 text-[18px]" href="/user">{user.name}</NavLink>
+                        
                     </div>
                     
                     <button
