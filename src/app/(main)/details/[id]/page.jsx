@@ -1,7 +1,7 @@
 import { getAnimalDetails } from '@/lib/data';
 import Link from 'next/link';
 import React from 'react';
-
+import Image from 'next/image';
 
 export const generateMetadata = async({ params }) => {
     const { id } = await params;
@@ -18,16 +18,9 @@ const DetailsPage = async ({params}) => {
     const animal = await getAnimalDetails(id);
     console.log(animal, "details for animal");
     return (
-        <div className='px-2'>
-            <h2>Details Page for the ID! ${id}!</h2>
-            {/* <div>
-                <h2>{animal.name}</h2>
-                <h3>{animal.price}</h3>
-                <p>{animal.description}</p>
-                <button className='btn btn-primary'>
-                    <Link href="/">Go to all...</Link>
-                </button>
-            </div> */}
+        <div className='px-2 my-3'>
+           
+            
 
 
             <div className="card bg-base-100 w-fit mx-auto shadow-sm">
@@ -36,12 +29,20 @@ const DetailsPage = async ({params}) => {
                 </figure>
                 <div className="card-body">
                     <h2 className="card-title">{animal.name}</h2>
+                    <Image src={animal.image} alt={animal.name} width={200} height={200} />
+                    
                     <p>{animal.price}</p>
                     <p>{animal.description}</p>
-                    <div className="card-actions justify-end">
-                    <button className="btn btn-primary">
-                        <Link href="/">Go to all...</Link>
-                    </button>
+                    <div className="card-actions justify-between my-2">
+                        
+                        <button className='btn btn-info'>
+                            <Link href='/booking'>Booking Now</Link>
+                        </button>
+                        <button className="btn btn-primary">
+                            <Link href="/">DashBoard</Link>
+                        </button>
+                        
+                    
                     </div>
                 </div>
             </div>  

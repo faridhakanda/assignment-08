@@ -1,0 +1,68 @@
+1. https://i.ibb.co.com/YF7Qz215/buffalo1.jpg
+2. https://i.ibb.co.com/0yjyTbS4/buffalo2.jpg
+
+3. https://i.ibb.co.com/XZY68BJb/camel1.jpg
+4. https://i.ibb.co.com/LDjq2v2j/camel2.jpg
+5. https://i.ibb.co.com/cc0mGq17/camel3.jpg
+
+
+
+6. https://i.ibb.co.com/GfGhRDFV/cow1.jpg
+7. https://i.ibb.co.com/gc3tD70/cow2.jpg
+8. https://i.ibb.co.com/fz1jN2D9/cow3.jpg
+9. https://i.ibb.co.com/5xTzGxMQ/cow4.jpg
+
+10. https://i.ibb.co.com/rRt7RJ61/goat1.jpg
+11. https://i.ibb.co.com/5grqx9Mf/goat2.jpg
+{
+            "id": 13,
+            "name": "Royal Camel",
+            "type": "Camel",
+            "breed": "Bactrian Cross",
+            "price": 580000,
+            "weight": 700,
+            "age": 6,
+            "location": "Sylhet",
+            "description": "Rare large-framed camel, perfect for a high-profile sacrifice.",
+            "image": "https://i.postimg.cc/camel2.png",
+            "category": "Large"
+        },
+        {
+            "id": 14,
+            "name": "Pabna Milk Cow",
+            "type": "Cow",
+            "breed": "Pabna Breed",
+            "price": 75000,
+            "weight": 180,
+            "age": 2.5,
+            "location": "Pabna",
+            "description": "Healthy medium-sized cow, raised on organic feed.",
+            "image": "https://i.postimg.cc/cow5.png",
+            "category": "Medium"
+        },
+        {
+            "id": 15,
+            "name": "Barbari Shorty",
+            "type": "Goat",
+            "breed": "Barbari",
+            "price": 15000,
+            "weight": 18,
+            "age": 1,
+            "location": "Comilla",
+            "description": "Small, active Barbari goat, very healthy and budget-friendly.",
+            "image": "https://i.postimg.cc/goat4.png",
+            "category": "Small"
+        },
+        {
+            "id": 16,
+            "name": "Barbari Shorty",
+            "type": "Goat",
+            "breed": "Barbari",
+            "price": 15000,
+            "weight": 18,
+            "age": 1,
+            "location": "Comilla",
+            "description": "Small, active Barbari goat, very healthy and budget-friendly.",
+            "image": "https://i.postimg.cc/goat4.png",
+            "category": "Small"
+        }
