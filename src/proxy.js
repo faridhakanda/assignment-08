@@ -10,7 +10,7 @@ export async function proxy(request) {
     const session = await auth.api.getSession({
         headers: await headers(),
     });
-    console.log(session, "farid animal hats!");
+    //console.log(session, "farid animal hats!");
     if (session) {
         return NextResponse.next();
     }

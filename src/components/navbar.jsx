@@ -10,15 +10,15 @@ import Image from "next/image";
 const Navbar = () => {
   const [isShow, setIsShow] = useState(true);
   const { data: session, isPending } = authClient.useSession();
-  console.log(session, "session");
+  //console.log(session, "session");
   const user = session?.user;
-  console.log(user, "Farid at qurabanihat!");
+  //console.log(user, "Farid at qurabanihat!");
   
   const handleGoogleSignIn = async () => {
     const data = await authClient.signIn.social({
         provider: "google",
     });
-    console.log(data, 'google sign in data!');
+    //console.log(data, 'google sign in data!');
   }
   return (
     <div>
