@@ -25,9 +25,10 @@ const UserProfile = () => {
             <div className="card bg-base-100 w-full md:w-96 mx-auto shadow-sm border-1 border-purple-200">
                 
                 <div className="card-body">
-                    <Image className='mx-auto' src={Avatar} alt={user.name} width={48} height={48} />
+                    <Image className='mx-auto' src={user.photo || Avatar} alt={user.name} width={48} height={48} />
                     <h2 className='text-xl md:text-3xl text-center'>{user.name}</h2>
                     <p className='text-center text-[#647489]'>{user.email}</p>
+                    <Link className='btn btn-secondary mx-auto' href='/update-userInfo'>Update Profile</Link>
                    <Link className='btn btn-primary mx-auto' href="/">Go to DashBoard</Link>
                 </div>
             </div>  
