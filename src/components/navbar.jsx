@@ -100,7 +100,7 @@ const Navbar = () => {
               {isPending ? (
                 <span className="loading loading-ring loading-xl"></span>
               ) : user ? (
-                <div className="space-y-3 my-3 items-center">
+                <div className="grid space-y-3 my-3 items-center">
                     <div
                         onClick={() => setIsShow(true)}
                     >
@@ -111,7 +111,7 @@ const Navbar = () => {
                     </div>
                     
                     <div
-                        className="btn"
+                        className="btn justify-start"
                         onClick={() => setIsShow(true)}>
                         <Image src={user.photo || Avatar} alt={user.name} width={32} height={32} />
                         <NavLink className="font-bold text-yellow-400 text-[18px]" href="/user">{user.name}</NavLink>

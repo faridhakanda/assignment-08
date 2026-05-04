@@ -23,8 +23,8 @@ const UserProfile = () => {
                     <Image className='mx-auto' src={user.photo || Avatar} alt={user.name} width={48} height={48} />
                     <h2 className='text-xl md:text-3xl text-center'>{user.name}</h2>
                     <p className='text-center text-[#647489]'>{user.email}</p>
-                    <Link className='btn btn-secondary mx-auto' href='/update-userInfo'>Update Profile</Link>
-                   <Link className='btn btn-primary mx-auto' href="/">Go to DashBoard</Link>
+                    <Link className='btn btn-secondary mx-auto w-full' href='/update-userInfo'>Update Profile</Link>
+                   <Link className='btn btn-primary mx-auto w-full' href="/">Go to DashBoard</Link>
                 </div>
             </div>  
         </div>
