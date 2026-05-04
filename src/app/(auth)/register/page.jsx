@@ -15,24 +15,8 @@ const Register = () => {
     } = useForm()
 
   const handleRegisterFunction = async(data) => {
-    console.log(data, "form data");
-    // const {name, email, photo_url, password} = data;
-    // here destructing from data;
-    // e.preventDefault();
-    // const email = e.target.email.value;
-    // const password = e.target.password.value;
-    // console.log(email, password, "email and password");
+    //console.log(data, "form data");
     
-    
-    // const { data: res, error } = await authClient.signUp.email({
-    //     name: name,
-    //     email: email,
-    //     password: password,
-    //     photo: photot,
-    //     callbackURL: "http://localhost:3000/login",
-
-    // });
-    // console.log(res, error);
     const { data: res, error } = await authClient.signUp.email({
         name: data.name,
         email: data.email,
@@ -41,7 +25,7 @@ const Register = () => {
         callbackURL: '/login',
 
     });
-    console.log(res, error);
+    //console.log(res, error);
     if (error) {
         toast.error(error.message);
     }

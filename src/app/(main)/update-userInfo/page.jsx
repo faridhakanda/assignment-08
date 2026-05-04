@@ -10,21 +10,23 @@ const UserProfileUpdate = () => {
     const {
         register,
         handleSubmit,
+        reset,
         formState: { errors },
     } = useForm()
 
     const handleUserProfileUpdate = async(data) => {
-        console.log(data, 'user profile update!');
+        //console.log(data, 'user profile update!');
         const { data: res, error } = await authClient.updateUser({
             photo: data.photo,
             name: data.name,
             callbackURL: '/',
         });
-        console.log(res, error);
+        //console.log(res, error);
         if (error) {
             toast.error(error.message);
         }
         if (res) {
+            reset(),
             toast.success("user profile updated successfully!");
         }
     }

@@ -17,7 +17,7 @@ const Login = () => {
     } = useForm()
 
   const handleLogin = async (data) => {
-    console.log(data, "form data");
+    //console.log(data, "form data");
     const { data: res, error} = await authClient.signIn.email({
         email: data.email,
         password: data.password,

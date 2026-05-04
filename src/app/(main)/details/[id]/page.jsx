@@ -16,7 +16,7 @@ const DetailsPage = async ({params}) => {
     const { id } = await params;
     
     const animal = await getAnimalDetails(id);
-    console.log(animal, "details for animal");
+    //console.log(animal, "details for animal");
     
     
     

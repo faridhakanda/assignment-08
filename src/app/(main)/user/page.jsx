@@ -16,12 +16,7 @@ const UserProfile = () => {
     }
     return (
         <div className='my-2 px-2 py-2'>
-            {/* <h2>User profile</h2>
-            <div>
-                <h2>{user.name}</h2>
-                <h2>{user.email}</h2>
             
-            </div> */}
             <div className="card bg-base-100 w-full md:w-96 mx-auto shadow-sm border-1 border-purple-200">
                 
                 <div className="card-body">
