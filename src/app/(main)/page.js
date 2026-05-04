@@ -17,7 +17,7 @@ export default async function Home() {
   return (
     <div className="container mx-auto justify-center items-center">
         <BannerPage />
-        <div>
+        <div className="mt-48 md:mt-0 lg:mt-0">
             <AnimalSort allAnimals={allAnimals}/>
         </div>
         {/* <div className=" -mt-48 py-2 md:mt-0 lg:mt-0 mx-auto justify-center items-center">

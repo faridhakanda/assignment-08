@@ -1,9 +1,18 @@
 @import "tailwindcss";
 @plugin "daisyui";
 
+
 body {
   background: #FFFFFF;
   color: #171717;
   font-family: Arial, Helvetica, sans-serif;
   overflow-x: hidden;
+}
+
+
+.qurbaniTitle {
+    --animate-duration: 3s;
+}
+:root {
+    --animate-delay: 0.5s;
 }
